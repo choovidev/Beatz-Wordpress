@@ -1,0 +1,456 @@
+/*
+Theme Name: BEATZ
+Author: Tu Nombre
+Description: Tema musical personalizado estilo reproductor
+Version: 1.0
+*/
+/*Variables de color*/
+:root {
+  --beatz-arriba: #3b1d29;
+  --beatz-central: #0e1821;
+  --beatz-abajo: #3b1d29;
+  --beatz-estandar: #3b1d29;
+  --beatz-form-button-hover: #4e2736;
+}
+/*Estilos generales de la pagina*/
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--beatz-central);
+  text-align: center;
+  color: white;
+}
+/*header*/
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 20px;
+  background-color: var(--beatz-arriba);
+  font-family: "Poppins", sans-serif;
+  z-index: 1000;
+}
+/*perfil*/
+header img {
+  position: absolute;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+/*titulo*/
+header h1 {
+  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+/*efecto de hover en el boton de inicio de sesion*/
+header button:hover {
+  background-color: black;
+}
+/* Contenedor de botones del header */
+.header-buttons {
+  position: absolute;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+  margin-top: -20px;
+}
+/*boton de inicio de sesion*/
+.login {
+  background-color: var(--beatz-estandar);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+/*efecto de hover en el boton de inicio de sesion*/
+.login:hover {
+  background-color: var(--beatz-form-button-hover);
+  transform: translateY(-2px);
+}
+
+/*galeria de discos*/
+.gallery-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 100px auto 90px;
+  padding: 20px;
+  max-width: 1200px;
+}
+/*galeria de discos*/
+.gallery-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+/*columna de discos*/
+.column {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  padding: 0 40px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+/*imagen de disco*/
+.image {
+  width: 180px;
+  height: 180px;
+  background: var(--beatz-estandar);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+/*efecto de hover en la imagen de disco*/
+.image:hover {
+  transform: scale(1.3);
+}
+/*imagen de disco*/
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
+}
+/* Estilos para las imágenes de álbumes en la galería */
+.gallery-section .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
+}
+/*boton de flecha*/
+.arrow {
+  all: unset;
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+/*efecto de hover en el boton de flecha*/
+.arrow:hover {
+  color: var(--beatz-estandar);
+}
+/*boton de flecha izquierda*/
+.arrow.left {
+  left: 0;
+}
+/*boton de flecha derecha*/
+.arrow.right {
+  right: 0;
+}
+/* Estilos generales del footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--beatz-abajo);
+  z-index: 1000;
+}
+/* Contenedor para alinear a la izquierda la imagen y la información de la canción */
+.footer-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Contenedor que agrupa la imagen y los detalles */
+.song-info {
+  display: flex;
+  align-items: center;
+}
+/* Estilos para la imagen del álbum */
+.album-cover {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+/* Estilos para el bloque de información de la canción */
+.song-details {
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+}
+/*titulo de la cancion*/
+.song-title {
+  font-size: 14px;
+  margin-bottom: 4px;
+  font-family: "Poppins", sans-serif;
+}
+/*artista de la cancion*/
+.song-artist {
+  font-size: 12px;
+  color: #888;
+  font-family: "Poppins", sans-serif;
+}
+/* Contenedor para los botones de control a la derecha */
+.footer-controls {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+/* Estilos para los botones de control */
+.control {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 20px;
+  margin: 10px 5px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+/* Estilos para los títulos h4 */
+h4 {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 30px 0 10px 0;
+  color: white;
+}
+
+/*efecto de hover en el boton de control*/
+.control:hover {
+  color: #888;
+}
+/* Página de contacto */
+.contact-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+/* Logo*/
+#logo {
+  color: white;
+  font-size: 48px;
+  margin: 20px auto;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+/*Contenedor del formulario*/
+.login-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos específicos para Contact Form 7 */
+.wpcf7-form {
+  background-color: var(--beatz-estandar);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+/* Contenedor campo de formulario, espacio entre campos y alineacion*/
+.wpcf7-form-control-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+/*etiqueta de los campos del formulario*/
+.wpcf7-form label {
+  display: block;
+  color: white;
+  margin-bottom: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+/*campo de texto del formulario*/
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+/*campo de texto del formulario*/
+.wpcf7-form textarea {
+  height: 120px;
+  resize: vertical;
+}
+/*boton de envio del formulario*/
+.wpcf7-form input[type="submit"] {
+  display: block;
+  width: 30%;
+  padding: 12px;
+  margin-top: 15px;
+  background-color: var(--beatz-estandar);
+  color: white;
+  margin: 0 auto;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+/*efecto de hover en el boton de envio del formulario*/
+.wpcf7-form input[type="submit"]:hover {
+  background-color: var(--beatz-form-button-hover);
+}
+
+/* Mensajes del formulario */
+.wpcf7-response-output {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+/*mensaje de error del formulario*/
+.wpcf7-not-valid-tip {
+  color: #ff6b6b !important;
+  font-size: 12px !important;
+  margin-top: -15px;
+  margin-bottom: 15px;
+}
+/* Mensaje de error */
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.failed .wpcf7-response-output {
+  color: #ff6b6b !important;
+}
+/* Mensaje de éxito */
+.wpcf7 form.sent .wpcf7-response-output {
+  color: #2ecc71 !important;
+}
+/* Ocultar mensaje por defecto de Contact Form 7 */
+.screen-reader-response {
+  display: none !important;
+}
+/* Estilos para el botón de volver */
+.back-button {
+  display: block;
+  width: 30%;
+  padding: 12px;
+  margin-top: 15px;
+  background-color: var(--beatz-estandar);
+  color: white;
+  margin: 0 auto;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+/*efecto de hover en el boton de volver*/
+.back-button:hover {
+  background-color: var(--beatz-form-button-hover);
+}
+
+/*sidebar boton de busqueda*/
+.wp-block-search__inside-wrapper  {
+  
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  margin-top: 40px;
+}
+/*boton de busqueda*/
+.wp-block-search__button {
+  background-color: var(--beatz-estandar);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+/* Margen del boton sobre el header*/
+.wp-block-search__button {
+  margin-top: 10%;
+}
+
+/* Contenedor del blog */
+.blog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Sección de posts */
+.posts-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Artículo individual */
+.post-article {
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 1rem;
+}
+/*titulo de los posts*/
+.post-article h3 a {
+  color: white;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+/*descripcion de los posts*/
+.post-article p {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+}
+
+/* Enlace Leer más */
+.read-more {
+  color: var(--beatz-estandar);
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  transition: color 0.3s ease;
+}
+/* efecto de hover en el enlace Leer más */
+.read-more:hover {
+  color: var(--beatz-form-button-hover);
+}
